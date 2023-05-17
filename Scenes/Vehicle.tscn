@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bxdbw4wd10jen"]
 
-[ext_resource type="Script" path="res://Vehicle.gd" id="1_1ve7p"]
+[ext_resource type="Script" path="res://scripts/Vehicle.gd" id="1_gdr2h"]
 [ext_resource type="Texture2D" uid="uid://7aagjv0mnybu" path="res://assets/car_black_5.png" id="2_644hb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6x87x"]
@@ -9,7 +9,7 @@ height = 118.0
 
 [node name="Vehicle" type="CharacterBody2D"]
 rotation = 1.57079
-script = ExtResource("1_1ve7p")
+script = ExtResource("1_gdr2h")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.57079

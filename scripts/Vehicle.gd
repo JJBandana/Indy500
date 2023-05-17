@@ -1,5 +1,9 @@
 extends CharacterBody2D
 
+class_name Vehicle
+
+var checkpoint = 0
+
 var wheel_base = 70
 var steering_angle = 15
 var steer_direction
@@ -11,7 +15,7 @@ var acceleration = Vector2.ZERO
 var friction = -55
 var drag = -0.06
 
-var braking = -450
+var braking = -800
 var max_speed_reverse = 250
 
 var slip_speed = 400
