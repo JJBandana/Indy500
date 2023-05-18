@@ -7,4 +7,5 @@ func _ready():
 
 func _on_body_entered(body):
 	if body is Vehicle:
-		body.checkpoint = checkpoint_number
+		if body.checkpoint < checkpoint_number && body.checkpoint > (checkpoint_number - 2):
+			body.checkpoint = checkpoint_number

@@ -2,7 +2,10 @@ extends CharacterBody2D
 
 class_name Vehicle
 
-var checkpoint = 0
+var checkpoint: int = 0:
+	set(new_value):
+		checkpoint = new_value
+		print(new_value)
 
 var wheel_base = 70
 var steering_angle = 15
@@ -29,7 +32,7 @@ func _physics_process(delta):
 	calculate_steering(delta)
 	velocity += acceleration * delta
 	move_and_slide()
-	
+
 func get_input():
 	var turn = Input.get_axis("steer_left", "steer_right")
 	steer_direction = turn * deg_to_rad(steering_angle)
@@ -47,9 +50,9 @@ func calculate_steering(delta):
 	front_wheel += velocity.rotated(steer_direction) * delta
 	# 3. Find the new direction vector
 	var new_heading = (front_wheel - rear_wheel).normalized()
-	var traction = traction_slow
-	if velocity.length() > slip_speed:
-		traction = traction_fast
+	#var traction = traction_slow
+	#if velocity.length() > slip_speed:
+	#	traction = traction_fast
 	var d = new_heading.dot(velocity.normalized())
 	if d > 0:
 		velocity = new_heading * velocity.length()
